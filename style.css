@@ -1,0 +1,65 @@
+.header {
+    padding: 80px;
+    text-align: left;
+    background: #703b1a;
+}
+
+.header h1 {
+    font-size: 40px;
+}
+
+.navbar {
+    background-color: #703b1a;
+    overflow: hidden;
+}
+
+.navbar a {
+    float: right;
+    color: white;
+    text-align: center;
+    padding: 15 px 20 px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    background-color: grey;
+    color: black;
+}
+
+.navbar a.active {
+    background-color: brown;
+    color: white;
+}
+
+/* Main body style sheet with only one column */
+.main {
+    margin: 5rem auto;
+    width: min(90%, 100rem);
+}
+
+/* Main body style sheet with two columns */
+.columns {
+    margin: 5rem auto;
+    width: min(90%, 100rem);
+    display: grid;
+    grid-template-columns: 65% 35%;
+    gap: 2em;
+}
+
+.columnsstudy {
+    margin: 5rem auto;
+    width: min(90%, 100rem);
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 2em;
+}
+
+@media (min-width: 55em) {
+    .columns {
+        grid-auto-flow: column;
+    }
+    .columnsstudy {
+        grid-auto-flow: column;
+    }
+}
