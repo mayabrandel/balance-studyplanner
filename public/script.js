@@ -3,6 +3,7 @@ const button = document.querySelector("#taskform > button");
 
 var taskInput = document.getElementById("taskInput");
 var tasklist = document.getElementById("tasklist");
+var upcomingtasklist = document.getElementById("upcomingtasklist");
 var dueDateInput = document.getElementById("dueDateInput");
 var completionTimeInput = document.getElementById("completionTimeInput");
 var priorityInput = document.getElementById("priorityInput");
@@ -35,7 +36,8 @@ function addTask(taskDescription, dueDate, priorityRating, completionTime, compl
         completionStatus
     };
     taskListArray.push(task);
-    displayTask(task);
+    //displayTask(task);
+    displayUpcomingTask(task);
 }
 
 function displayTask(task){
@@ -54,11 +56,68 @@ function displayTask(task){
     //event listeners for DOM elements
     delButton.addEventListener("click", function(event){
         event.preventDefault();
-        item.remove();
+        //item.remove();
+        var index = taskListArray.indexOf(task);
+        if (index !== -1) {
+            taskListArray.splice(index, 1);
+        }
+        refreshtasklist();
     })
-
 
     //clear the input form
     form.reset();
+
+}
+
+function displayUpcomingTask(task){
+    //create HTML elements
+    let item = document.createElement("li");
+    item.innerHTML = "<p>" + task.taskDescription + '    ' + task.dueDate + "</p>"; 
+
+    upcomingtasklist.appendChild(item);
+
+    //user interaction extra task DOM elements
+    let delButton = document.createElement("button");
+    let delButtonText = document.createTextNode("Delete Task");
+    delButton.appendChild(delButtonText);
+    item.appendChild(delButton);
+
+    //event listeners for DOM elements
+    delButton.addEventListener("click", function(event){
+        event.preventDefault();
+        //item.remove();
+        var index = taskListArray.indexOf(task);
+        if (index !== -1) {
+            taskListArray.splice(index, 1);
+        }
+        refreshtasklist();
+    })
+
+    //clear the input form
+    form.reset();
+
+}
+
+function refreshtasklist(){
+
+    //reorder by dates
+    taskListArray.sort(function(a,b){
+        // Turn your strings into dates, and then subtract them
+        // to get a value that is either negative, positive, or zero.
+        return new Date(b.dueDate) - new Date(a.dueDate);
+      });
+
+    while (upcomingtasklist.firstChild) {
+        upcomingtasklist.removeChild(upcomingtasklist.firstChild);
+    }
+
+    while (tasklist.firstChild) {
+        tasklist.removeChild(tasklist.firstChild);
+    }
+
+    for (let i = 0; i < taskListArray.length; i++) {
+        displayUpcomingTask(taskListArray[i]);
+        displayTask(taskListArray[i]);
+      }
 
 }
