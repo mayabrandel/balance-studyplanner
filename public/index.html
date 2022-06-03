@@ -31,10 +31,39 @@
     <div>
       <h1>Upcoming tasks</h1>
       <p>list of tasks ordered from dates</p>
+      
     </div>
+
     <div>
       <h1>Add a task</h1>
       <p>adding a task is possible here</p>
+      
+      <form id="taskform">
+        <label for="task">Task:</label>
+        <input type="text" name="task" id="taskInput">
+
+        <label for="dueDate">Due Date:</label>
+        <input type="date" name="dueDate" id="dueDateInput">
+
+        <label for="completionTime">Completion Time:</label>
+        <input type="time" name="completionTime" id="completionTimeInput">
+
+        <label for="priority">Task Priority:</label>
+        <select name="priority" id="priorityInput">
+          <option value="">Select</option>
+          <option value="Low">Low</option>
+          <option value="Med">Med</option>
+          <option value="High">High</option>
+        </select>
+
+
+
+
+        <button type="submit">Submit</button>
+      </form>
+      <ul id="tasklist">
+      </ul>
+      <script src="script.js"></script>
     </div>
     
   </div>
