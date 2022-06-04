@@ -17,6 +17,8 @@ const startBtn = document.querySelector(".start");
 const stopBtn = document.querySelector(".stop");
 const resetBtn = document.querySelector(".reset");
 
+var kanbanList = document.getElementById("kanbanList");
+
 
 button.addEventListener("click", function(event){
     console.log('buttonclicked');
@@ -28,7 +30,6 @@ button.addEventListener("click", function(event){
     
 
     addTask(task, dueDate, priorityRating, completionTime, false);
-    console.log(taskList);
 })
 
 
@@ -48,7 +49,8 @@ function addTask(taskDescription, dueDate, priorityRating, completionTime, compl
     };
     taskListArray.push(task);
     //displayTask(task);
-    displayUpcomingTask(task);
+    refreshtasklist();
+    
 }
 
 function displayTask(task){
@@ -127,9 +129,15 @@ function refreshtasklist(){
         tasklist.removeChild(tasklist.firstChild);
     }
 
+    while (kanbanList.firstChild) {
+        kanbanList.removeChild(kanbanList.firstChild);
+    }
+
     for (let i = 0; i < taskListArray.length; i++) {
         displayUpcomingTask(taskListArray[i]);
-        displayTask(taskListArray[i]);
+        displayMovableTasks(taskListArray[i]);
+        console.log(taskListArray[i]);
+        //displayTask(taskListArray[i]);
       }
 
 }
@@ -191,6 +199,40 @@ function putValue() {
     document.querySelector(".second").innerText = sec;
     document.querySelector(".minute").innerText = min;
     document.querySelector(".hour").innerText = hr;
+}
+
+
+//Kanban Board
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+
+function displayMovableTasks(task){
+    console.log('displaying moving tasks');
+    //create HTML elements
+    let item = document.createElement("div");
+
+    item.setAttribute("draggable", "true");
+    item.setAttribute("ondragstart", "drag(event)")
+    item.setAttribute("class", "task");
+    item.setAttribute("id", task.taskDescription);
+
+    item.innerHTML = "<span>" + task.taskDescription + '    ' + task.dueDate + "</span>"; 
+    console.log(kanbanList);
+    kanbanList.appendChild(item);
+
+
 }
 
 //dictionary try1 - 
