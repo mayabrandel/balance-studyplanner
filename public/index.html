@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Balance Study Planner</title>
   <meta charset="UTF-8" />
@@ -7,33 +8,45 @@
   <meta name="description" content="" />
   <link rel="stylesheet" type="text/css" href="style.css" />
   <link rel="icon" href="HOURGLASS.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Birthstone+Bounce">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower">
 </head>
+
 <body>
   <div class="header">
+    <img src="HOURGLASS.png" alt="HourGlassIcon" style="float:left;width:80px;padding-right:60px;padding-top:60px;transform:rotate(340deg)">
     <h1>Balance</h1>
-    <p>Study Planner</p>
+    <h2>Study Planner</h2>
   </div>
 
 
   <div class="columns">
     <div>
+      <div class="boxbackgroundleft">
       <h1>Upcoming tasks</h1>
-      <p>list of tasks ordered from dates</p>
-      <ul id="upcomingtasklist">
-      </ul>
+      <h2 style="float:left; ">Tasks</h2>
+      <h2 style="float:right; text-align:left;padding-right: 30%">Date</h2>
+      <div class="boxbackgroundtasks">
+        <ul id="upcomingtasklist">
+        </ul>
+      </div>
+    </div>
     </div>
 
     <div>
+      <div class="boxbackground">
       <h1>Add a task</h1>
-      <p>adding a task is possible here</p>
-      
+      <br>
+      <br>
+
       <form id="taskform">
         <label for="task">Task:</label>
         <input type="text" name="task" id="taskInput">
-
+        <br><br>
         <label for="dueDate">Due Date:</label>
         <input type="date" name="dueDate" id="dueDateInput">
-
+        <br><br>
         <label for="completionTime">Completion Time:</label>
         <input type="time" name="completionTime" id="completionTimeInput">
 
@@ -44,47 +57,58 @@
           <option value="Med">Med</option>
           <option value="High">High</option>
         </select>
+        <br><br>
 
         <button type="submit">Submit</button>
       </form>
       <ul id="tasklist">
       </ul>
-      
     </div>
-    
+    </div>
   </div>
 
   <div class="columnsstudy">
     <div>
+      <div class="boxbackgroundkanban">
       <h1>Kanban board</h1>
-      <p>kanban board users can use</p>
+      <p>Organise your progress through all your tasks</p>
       <div class="container">
-        <div class="kanban-heading">
-            <h1 class="kanban-heading-text">Kanban Board</h1>
-
-        </div>
         <div class="kanban-board">
-            <div class="kanban-block" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <h1>To Do</h1>
-                <div class="task-block" id="kanbanList">
-                </div>
-
-
+          <div class="kanban-block" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>To Do</h2>
+            <div class="task-block" id="kanbanList">
             </div>
 
-            <div class="kanban-block" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <h1>In Progress</h1>
-            </div>
-            <div class="kanban-block" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <h1>Done</h1>
-            </div>
+
+          </div>
+
+          <div class="kanban-block" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>In Progress</h2>
+          </div>
+          <div class="kanban-block" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Complete</h2>
+          </div>
         </div>
+      </div>
+    </div>
+    <br>
+    <br>
+
+      <div class="boxbackgroundkanban">
+      <h1>Music Player</h1>
+      <br>
+      <audio controls>
+        <source src="lofi-study-112191.mp3" type="audio/mpeg">
+      </audio>
+
     </div>
 
 
     </div>
     <div>
+      <div class="boxbackground">
       <h1>Timer</h1>
+      <br>
       <div class="wrapper">
         <div class="time">
           <span class="hour">00</span>
@@ -100,10 +124,14 @@
           <button class="reset">Reset</button>
         </div>
       </div>
-      
+    </div>
+    <br>
+    <br>
+    <br>
 
+    <div class="boxbackground">
       <h1>Dictonary</h1>
-      <p>dictionary search</p>
+      <br>
       <form id="dictionaryform">
         <label for="word">Word:</label>
         <input type="text" name="word" id="searchWord">
@@ -114,21 +142,14 @@
       </ul>
       <ul id="synonyms">
       </ul>
-      
+      </div>
     </div>
 
 
 
   </div>
-  
-  <div class="main">
-    <h1>music player</h1>
-    <audio controls>
-      <source src="lofi-study-112191.mp3" type="audio/mpeg">
-    </audio>
-  </div>
-  
-  
+
 </body>
 <script src="script.js"></script>
+
 </html>
