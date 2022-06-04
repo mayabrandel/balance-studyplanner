@@ -265,31 +265,64 @@ function searchdictionary() {
 
         //if no errors
         if (request.status >= 200 && request.status < 400) {
-          word = data.word;
+          word = data[0].word;
+          console.log(data);
 
             while (meaning.firstChild) {
             meaning.removeChild(meaning.firstChild);
              }
-             console.log(data.meanings);
-            for (let i = 0; i < data["meanings"].length; i++) {
-                var definitions = data.meanings[i].definitions;
+
+             while (synonyms.firstChild) {
+                synonyms.removeChild(synonyms.firstChild);
+                 }
+
+             console.log(data[0].meanings);
+            for (let i = 0; i < data[0].meanings.length; i++) {
+                var definitions = data[0].meanings[i].definitions;
+                
+                console.log(definitions.length);
                 for (let j = 0; j < definitions.length; j++) {
                     //create HTML elements
                     let item = document.createElement("li");
                     item.innerHTML = "<p>" + definitions[j].definition + "</p>"; 
                     meaning.appendChild(item);
+                    if (j === 4) {
+                        break;
+                    }
+                
+                 }
+                 console.log(meaning.children.length);
+                 if (meaning.children.length === 6){
+                    break;
+                }
+
+                
+
+                }
+
+                let textsynonym = document.createElement("ul");
+                textsynonym.innerHTML = "<p>" + "Synonyms:" + "</p>"; 
+                meaning.appendChild(textsynonym);
+
+                console.log(data[0].meanings[0].synonyms)
+                for (let k = 0; k < data[0].meanings[0].synonyms.length; k++) {
+                    //create HTML elements
+                    let item = document.createElement("li");
+                    item.innerHTML = "<p>" + data[0].meanings[0].synonyms[k] + "</p>"; 
+                    meaning.appendChild(item);
+                    if (k === 6) {
+                        break;
+                    }
 
                      }
-            
-                }
+                
 
           //meaning.innerHTML = data.text;
           //synonyms.innerHTML = data.text;  
         }else{
           word.innerHTML = "Error";
           meaning.innerHTML = "Error";  
-          
-          //synonyms.innerHTML = "Error";  
+          synonyms.innerHTML = "Error";  
         }
       }
       request.send();
