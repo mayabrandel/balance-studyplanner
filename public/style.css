@@ -8,29 +8,7 @@
     font-size: 40px;
 }
 
-.navbar {
-    background-color: #703b1a;
-    overflow: hidden;
-}
 
-.navbar a {
-    float: right;
-    color: white;
-    text-align: center;
-    padding: 15 px 20 px;
-    text-decoration: none;
-    font-size: 20px;
-}
-
-.navbar a:hover {
-    background-color: grey;
-    color: black;
-}
-
-.navbar a.active {
-    background-color: brown;
-    color: white;
-}
 
 /* Main body style sheet with only one column */
 .main {
@@ -55,6 +33,53 @@
     gap: 2em;
 }
 
+.wrapper {
+    user-select: none;
+}
+.wrapper .time {
+    height: 100 px;
+    background: brown;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.wrapper .time span {
+    width: 20 px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 400px;
+}
+
+time span.colon {
+    width: 5 px;
+}
+
+.wrapper .buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.buttons button {
+    padding: 6px, 16px;
+    outline: none;
+    border: none;
+    margin: 0 5px;
+    color: white;
+    background: brown;
+    font-size: 19px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttons button.active,
+.buttons button.stopActive {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
 @media (min-width: 55em) {
     .columns {
         grid-auto-flow: column;
@@ -63,3 +88,4 @@
         grid-auto-flow: column;
     }
 }
+
