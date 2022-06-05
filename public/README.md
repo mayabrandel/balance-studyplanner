@@ -1,4 +1,4 @@
-# balance-studyplanner
+# Balance-studyplanner STUDBUD
 
 ** Please note that between github commits I was working in another project file and copying the whole file back into here as I had trouble viewing the console with this project file that had node.js included. So to debug I was using another project folder without node.js :)
 
@@ -10,8 +10,8 @@
 
 Following the mock ups the layout of the website was first coded to include a nav bar and have two HTML pages for the user to go betweeen. Below are the mock ups and the first coded layout of the website following closely to the mockups. 
 <img src="public\images\Homepage.png" width="385px">
-![mockuphomepage](public\images\Homepage.png "Mockup-Homepage")
-![Firstlayoutnavigationbar](public\images\navigation.JPG "Navigation bar")
+![mockuphomepage](public\images\Homepage.png?raw=true "Mockup-Homepage")
+![Firstlayoutnavigationbar](public\images\navigation.JPG?raw=true "Navigation bar")
 
 However through the process of further iterating the website issues were found in the tasks disappearing when changing pages so a new iteration was designed to fit a one page layout with only the necessary functions.
 
@@ -23,7 +23,7 @@ Sketches
 
 From these sketches the final layout was coded following the new layout as seen below.
 
-![Finallayoutcode](public\images\onepage.JPG "One Page Layout")
+![Finallayoutcode](public\images\onepage.JPG?raw=true "One Page Layout")
 
 
 ### Task List
@@ -34,20 +34,20 @@ From the mock-ups the Task aspects were iterated to show the upcoming tasks and 
 
 This was first coded into the layout of the page getting the functionality working then iterated through the CSS.
 
-![layouttasks](public\images\oldtasks.jpg "layout tasks")
+![layouttasks](public\images\oldtasks.jpg?raw=true "layout tasks")
 
 #### Second iteration
 
 Colors and text following the mockup were then styled into the functions, it followed the light brown background with the darker brown heading.
 
-![taskprogress](public\images\taskprogress.JPG "taskprogress")
+![taskprogress](public\images\taskprogress.JPG?raw=true "taskprogress")
 
 
 #### Third iteration
 
 Extra stylised aspects were added to the final iteration; including a stylised form and a white text box where the upcoming tasks will be displayed. This provided a clear area for the users to view and a better layout to view the list of tasks. 
 
-![taskfinal](public\images\Tasks final.JPG "taskfinal")
+![taskfinal](public\images\Tasks final.JPG?raw=true "taskfinal")
 
 
 ### Kanban board
@@ -58,20 +58,20 @@ From the iterations of the layout the Kanban board was moved to be onto the same
 
 The functionality and layout of the Kanban board was first coded and roughly designed. From the mock-up the functionality changed a bit as instead of users choosing a task and creating to do lists for each task in the Kanban Board, it was changed to the tasks being displayed into the board which users can move between columns. This provides more focus on all the tasks and the progress students are making through all their subjects.
 
-![oldkanbanboard](public\images\oldkanban.jpg "oldkanbanboard")
+![oldkanbanboard](public\images\oldkanban.jpg?raw=true "oldkanbanboard")
 
 #### Second iteration
 
 Following the mockup style the CSS was designed for the Kanban board section to have the light brown background with the white sections for the columns. The functionality allows the users to drag and drop the tasks (which pop up from their task list) and sort them in the order they like in the columns. The columns were designed into 3, "To do", "In progress", and "Complete". This allows the users to easily map out their progress and view the required tasks they need to complete. 
 
-![kanbanboard1](public\images\kanbanboard1.JPG "kanbanboard1")
+![kanbanboard1](public\images\kanbanboard1.JPG?raw=true "kanbanboard1")
 
 
 #### Third iteration
 
 The board was stylised a bit more to have a gradient between the columns which asserts the columns progression. 
 
-![finalkanban](public\images\kanban2.JPG "finalkanban")
+![finalkanban](public\images\kanban2.JPG?raw=true "finalkanban")
 
 
 ### Timer
@@ -81,13 +81,13 @@ The board was stylised a bit more to have a gradient between the columns which a
 To create the timer a tutorial was followed online at - https://www.youtube.com/watch?v=tREjO_eAPL0, the code was changed to not include the milliseconds and for the timer to just show the hour, minute and seconds as it was thought to not be needed as it will be used to time longer lengths of time for studying than short times. 
 The functionality was created and simple CSS was designed for the first iteration;
 
-![timer1](public\images\timer.JPG "timer1")
+![timer1](public\images\timer.JPG?raw=true "timer1")
 
 #### Second iteration
 
 The CSS was further iterated to follow the mockup design colours. The layout ended up being a bit different from the original mock-up design as icons weren't used but instead buttons for the 3 functions and it just showed the counting up number in the timer.
 
-![timer2](public\images\timer2.JPG "timer2")
+![timer2](public\images\timer2.JPG?raw=true "timer2")
 
 
 
@@ -97,17 +97,17 @@ The CSS was further iterated to follow the mockup design colours. The layout end
 
 The functionality was first coded through javascript, using the API - https://dictionaryapi.dev/ . CSS was not designed so the outcome was just a plain list format. This had a couple of bugs - including too long response and no synonmy values being picked up.
 
-![dictionary1](public\images\dictionarysearch.JPG "dictionary1")
+![dictionary1](public\images\dictionarysearch.JPG?raw=true "dictionary1")
 
 #### Second iteration
 
 The issues were solved in the next iteration, with the synonyms being shown under a new title "Synonyms". 
 
-![dictionarysynonyms](public\images\dictionarysynonym.jpg "dictionarysynonyms")
+![dictionarysynonyms](public\images\dictionarysynonym.jpg?raw=true "dictionarysynonyms")
 
 The CSS was also further iterated to follow the mockup design colours. 
 
-![dictionaryfinal](public\images\dictionarycss.jpg "dictionaryfinal")
+![dictionaryfinal](public\images\dictionarycss.jpg?raw=true "dictionaryfinal")
 
 
 
@@ -117,16 +117,16 @@ The CSS was also further iterated to follow the mockup design colours.
 
 Using an embedded music player with an mp3 file from; https://pixabay.com/music/search/study/ , the functionality of the music player was created. The layout was slightly different to the mockup as it was placed in a slightly different position under the Kanban Board being more on the left of the screen instead of the full width of the device. 
 
-![music1](public\images\music1.jpg "music1")
+![music1](public\images\music1.jpg?raw=true "music1")
 
 #### Second iteration
 
 The CSS for this section was then designed following the mock-up colours, however the audio icons were different as the automatic audio display was used. There was an issue with this iteration as it was coded below the Kanban Board and dictionary section, when the dictionary was used it pushed the music function all the way to the bottom. This was debugged in the final iteration.
 
-![musiccss](public\images\issuewithmusicplayer.JPG "musiccss")
+![musiccss](public\images\issuewithmusicplayer.JPG?raw=true "musiccss")
 
 #### Third iteration
 
 The music div was moved to be in the same column as the Kanban board so it would stay beneath even when the dictionary function was used. This allowed for a better layout of the website without too much unused white space. 
 
-![musicfinal](public\images\resolutionmusicplayer.JPG "musicfinal")
+![musicfinal](public\images\resolutionmusicplayer.JPG?raw=true "musicfinal")
