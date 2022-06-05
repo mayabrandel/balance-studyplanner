@@ -15,11 +15,10 @@
 
 <body>
   <div class="header">
-    <img src="HOURGLASS.png" alt="HourGlassIcon" style="float:left;width:80px;padding-right:60px;padding-top:60px;transform:rotate(340deg)">
+    <img src="HOURGLASS.png" alt="HourGlassIcon" class="imageicon">
     <h1>Balance</h1>
     <h2>Study Planner</h2>
   </div>
-
 
   <div class="columns">
     <div>
@@ -74,19 +73,20 @@
       <p>Organise your progress through all your tasks</p>
       <div class="container">
         <div class="kanban-board">
-          <div class="kanban-block" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div class="kanban-block" id="todo">
             <h2>To Do</h2>
-            <div class="task-block" id="kanbanList">
+            <div class="task-block" id="kanbanList"  ondrop="drop(event)" ondragover="allowDrop(event)">
             </div>
-
-
           </div>
-
-          <div class="kanban-block" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div class="kanban-block" id="inprogress">
             <h2>In Progress</h2>
+            <div class="task-block" id="kanbanList1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            </div>
           </div>
-          <div class="kanban-block" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div class="kanban-block" id="done">
             <h2>Complete</h2>
+            <div class="task-block" id="kanbanList2" ondrop="drop(event)" ondragover="allowDrop(event)">
+            </div>
           </div>
         </div>
       </div>
@@ -105,11 +105,9 @@
       <audio controls>
         <source src="lofi-study-112191.mp3" type="audio/mpeg">
       </audio>
-
+    </div>
     </div>
 
-
-    </div>
     <div>
       <div class="boxbackground">
       <h1>Timer</h1>
@@ -149,9 +147,6 @@
       </ul>
       </div>
     </div>
-
-
-
   </div>
 
 </body>
